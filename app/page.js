@@ -1,9 +1,12 @@
-import ClientSide from "@/pages/api/client-side"
+import Fox from "@/pages/api/fox"
+import FoxRender from "@/pages/api/fox"
+import Stoa from "@/pages/api/stoa"
 
 export default function Home() {
   return (
     <>
- <ClientSide/>
+ <Fox/>
+ <Stoa/>
     </>
  
   )
