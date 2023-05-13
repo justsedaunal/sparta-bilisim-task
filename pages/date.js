@@ -14,11 +14,11 @@ export const DateTime = () => {
 
     return(
         <div>
-            <p> Time : {date.toLocaleTimeString()}</p>
-            <p> Date : {date.toLocaleDateString()}</p>
+            <p class="card__info__time" >  {date.toLocaleTimeString()}</p>
+            <p class="card__info__date" > {date.toLocaleDateString()}</p>
 
         </div>
     )
 }
 
-export default DateTime
+export default DateTime 
