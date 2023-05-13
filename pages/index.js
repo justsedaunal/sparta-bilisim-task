@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import Fox from "./fox";
 import Stoa from "./stoa";
 import Weather from "./weather";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,39 +19,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Fox />
-      <Stoa />
-      <Weather /> */}
+
       <Weather />
       <ol class="articles">
         <Fox />
         <Stoa />
-
-        {/* <li class="articles__article" style= {{"--animation-order":3}} >
-          <a class="articles__link">
-            <div class="articles__content articles__content--lhs">
-              <h2 class="articles__title">
-                Powder tootsie roll chocolate sugar
-              </h2>
-              <div class="articles__footer">
-                <p>Puddings</p>
-                <time>3 Mar 2020</time>
-              </div>
-            </div>
-            <div
-              class="articles__content articles__content--rhs"
-              aria-hidden="true"
-            >
-              <h2 class="articles__title">
-                Powder tootsie roll chocolate sugar
-              </h2>
-              <div class="articles__footer">
-                <p>Puddings</p>
-                <time>3 Mar 2020</time>
-              </div>
-            </div>
-          </a>
-        </li> */}
+        <Link href="/usom">
+          <button class="page-button"> USOM</button>
+        </Link>
       </ol>
     </>
   );
