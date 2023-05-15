@@ -81,6 +81,7 @@ const App: React.FC = () => {
         filters: [
           { text: '.net', value: '.net' },
           { text: '.com', value: '.com' },
+          { text: '.xyz', value: '.xyz' },
         ],
         filteredValue: filteredInfo.url || null,
         onFilter: (value: string, record) => record.url.includes(value),
