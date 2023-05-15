@@ -98,19 +98,19 @@ const App: React.FC = () => {
       ellipsis: true,
     },
     {
-      title: "Description",
-      dataIndex: "desc",
-      key: "desc",
-      filters: [
-        { text: "London", value: "London" },
-        { text: "New York", value: "New York" },
-      ],
-      filteredValue: filteredInfo.address || null,
-      //   onFilter: (value: string, record) => record.address.includes(value),
-      //   sorter: (a, b) => a.address.length - b.address.length,
-      sortOrder: sortedInfo.columnKey === "address" ? sortedInfo.order : null,
-      ellipsis: true,
-    },
+        title: 'Description',
+        dataIndex: 'desc',
+        key: 'desc',
+        filters: [
+          { text: 'BP', value: 'BP' },
+          { text: 'MD', value: 'MD' },
+        ],
+        filteredValue: filteredInfo.desc || null,
+        onFilter: (value: string, record) => record.desc.includes(value),
+        sorter: (a, b) => a.desc.length - b.desc.length,
+        sortOrder: sortedInfo.columnKey === 'desc' ? sortedInfo.order : null,
+        ellipsis: true,
+      },
   ];
 
   return (
