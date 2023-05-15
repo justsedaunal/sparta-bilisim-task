@@ -69,7 +69,7 @@ const App: React.FC = () => {
   const setAgeSort = () => {
     setSortedInfo({
       order: "descend",
-      columnKey: "age",
+      columnKey: "date",
     });
   };
 
@@ -116,7 +116,7 @@ const App: React.FC = () => {
   return (
     <>
       <Space style={{ marginBottom: 16 }}>
-        <Button onClick={setAgeSort}>Sort age</Button>
+        {/* <Button onClick={setAgeSort}>Sort age</Button> */}
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>
       </Space>
