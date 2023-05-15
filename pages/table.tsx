@@ -75,19 +75,19 @@ const App: React.FC = () => {
 
   const columns: ColumnsType<DataType> = [
     {
-      title: "Address",
-      dataIndex: "url",
-      key: "url",
-      filters: [
-        { text: ".net", value: ".net" },
-        { text: ".com", value: ".com" },
-      ],
-      filteredValue: filteredInfo.name || null,
-      //   onFilter: (value: string, record) => record.name.includes(value),
-      //   sorter: (a, b) => a.name.length - b.name.length,
-      sortOrder: sortedInfo.columnKey === "name" ? sortedInfo.order : null,
-      ellipsis: true,
-    },
+        title: 'Address',
+        dataIndex: 'url',
+        key: 'url',
+        filters: [
+          { text: '.net', value: '.net' },
+          { text: '.com', value: '.com' },
+        ],
+        filteredValue: filteredInfo.url || null,
+        onFilter: (value: string, record) => record.url.includes(value),
+        sorter: (a, b) => a.url.length - b.url.length,
+        sortOrder: sortedInfo.columnKey === 'url' ? sortedInfo.order : null,
+        ellipsis: true,
+      },
     {
       title: "Date",
       dataIndex: "date",
