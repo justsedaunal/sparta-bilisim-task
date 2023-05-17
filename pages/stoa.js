@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { Spin } from "antd";
 
 const Stoa = () => {
   const [data, setData] = useState(null);
@@ -16,11 +17,14 @@ const Stoa = () => {
       });
   }, [reload]);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
+
+  if (isLoading) return  <Spin tip="Loading" size="large">
+  <div className="content articles__article" />
+</Spin>;
+  if (!data) return <p class="articles__article" >No data</p>;
 
   return (
-    <li class="articles__article" style={{ "--animation-order:": 2 }}>
+    <li class="articles__article" style={{ "--animation-order:": 2 }} onClick={() => setReload(!reload)} >
       <a class="articles__link">
         <div class="articles__content articles__content--lhs">
           <h2 class="articles__title"> {data.quote} </h2>
@@ -40,7 +44,7 @@ const Stoa = () => {
           </div>
         </div>
       </a>
-      <button class="button" onClick={() => setReload(!reload)} >next</button>
+      <button class="button"  >next</button>
     </li>
   );
 };

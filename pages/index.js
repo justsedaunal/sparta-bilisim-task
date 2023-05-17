@@ -24,9 +24,9 @@ export default function Home() {
       <ol class="articles">
         <Fox />
         <Stoa />
-        <Link href="/usom">
+        {/* <Link href="/usom">
           <button class="page-button"> USOM</button>
-        </Link>
+        </Link> */}
       </ol>
     </>
   );

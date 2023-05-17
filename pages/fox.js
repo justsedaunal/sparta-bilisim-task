@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { Spin } from "antd";
 
 const Fox = () => {
   const [data, setData] = useState(null);
@@ -16,13 +17,24 @@ const Fox = () => {
       });
   }, [reload]);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
+  if (isLoading)
+    return (
+    
+        <Spin tip="Loading" size="large">
+          <div className="content articles__article" />
+        </Spin>
+
+    );
+  if (!data) return <p class="articles__article">No data</p>;
 
   return (
     <>
       {/* <button onClick={() => setReload(!reload)} >Reload</button> */}
-      <li class="articles__article" style={{ "--animation-order": 3 }}>
+      <li
+        class="articles__article"
+        style={{ "--animation-order": 3 }}
+        onClick={() => setReload(!reload)}
+      >
         <a class="articles__link">
           <div class="articles__content articles__content--lhs">
             <img src={data.image} class="articles__title" />
@@ -42,7 +54,7 @@ const Fox = () => {
             </div>
           </div>
         </a>
-        <button class="button" onClick={() => setReload(!reload)} >next</button>
+        <button class="button">next</button>
       </li>
     </>
   );
