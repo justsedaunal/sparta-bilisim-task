@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { DatePicker } from 'antd';
 import UsomTable from "../pages/table"
-import IPInput from "../pages/input"
+
 
 
 
@@ -31,7 +31,7 @@ function usom() {
       {/* <Link href="/">
         <button className="page-button"> HOME</button>
       </Link> */}
-      <IPInput/>
+
      <UsomTable/>
     </div>
   );

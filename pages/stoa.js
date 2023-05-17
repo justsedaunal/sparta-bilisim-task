@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Spin } from "antd";
+import { Empty } from 'antd';
 
 const Stoa = () => {
   const [data, setData] = useState(null);
@@ -21,7 +22,7 @@ const Stoa = () => {
   if (isLoading) return  <Spin tip="Loading" size="large">
   <div className="content articles__article" />
 </Spin>;
-  if (!data) return <p class="articles__article" >No data</p>;
+  if (!data) return <Empty />;
 
   return (
     <li class="articles__article" style={{ "--animation-order:": 2 }} onClick={() => setReload(!reload)} >
