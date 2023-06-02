@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AutoComplete,Input } from "antd";
+import { AutoComplete, Input } from "antd";
 
 const { Option } = AutoComplete;
 
@@ -27,7 +27,9 @@ function generateIPRange(ip) {
 
 function App() {
   const [options, setOptions] = useState([]);
-  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     console.log(e);
   };
 
@@ -44,16 +46,16 @@ function App() {
     const lastIP = `${value.split(".")[0]}.${value.split(".")[1]}.${
       value.split(".")[2]
     }.254`;
-   
+
     const allOptions = [
-    //   {
-    //     label: "İlk IP adresi",
-    //     value: firstIP,
-    //   },
-    //   {
-    //     label: "Son IP adresi",
-    //     value: lastIP,
-    //   },
+      //   {
+      //     label: "İlk IP adresi",
+      //     value: firstIP,
+      //   },
+      //   {
+      //     label: "Son IP adresi",
+      //     value: lastIP,
+      //   },
       {
         label: " IP addresses",
         options: ipRange.map((ip) => ({ value: ip })),
@@ -69,7 +71,7 @@ function App() {
         options={options}
         onSearch={handleSearch}
       >
-         <Input placeholder="Enter IP Address" allowClear onChange={onChange} />
+        <Input placeholder="Enter IP Address" allowClear onChange={onChange} />
       </AutoComplete>
     </div>
   );

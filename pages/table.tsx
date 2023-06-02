@@ -4,7 +4,9 @@ import axios from "axios";
 import IPInput from "../pages/input";
 
 import { Spin, TableProps } from "antd";
-import { Button, Space, Table } from "antd";
+import { Button, Space, Table,Typography } from "antd";
+const { Text } = Typography;
+
 import type {
   ColumnsType,
   FilterValue,
@@ -129,7 +131,7 @@ const App: React.FC = () => {
       dataIndex: "date",
       key: "date",
       //   sorter: (a, b) => a.age - b.age,
-      sortOrder: sortedInfo.columnKey === "age" ? sortedInfo.order : null,
+      sortOrder: sortedInfo.columnKey === "date" ? sortedInfo.order : null,
       ellipsis: true,
     },
     {
@@ -158,19 +160,19 @@ const App: React.FC = () => {
 
     //       ),
     //     },
-    {
-      title: "Action",
-      key: "action",
-      render: (text, record) => (
-        <Button
-          type="primary"
-          onClick={() => handleDetailClick(text.url)}
-          style={{ background: "#914141bd" }}
-        >
-          Click
-        </Button>
-      ),
-    },
+    // {
+    //   title: "Action",
+    //   key: "action",
+    //   render: (text, record) => (
+    //     <Button
+    //       type="primary"
+    //       onClick={() => handleDetailClick(text.url)}
+    //       style={{ background: "#914141bd" }}
+    //     >
+    //       Click
+    //     </Button>
+    //   ),
+    // },
   ];
 
   return (
@@ -185,13 +187,15 @@ const App: React.FC = () => {
         <Spin tip="Loading" size="large"></Spin>
       ) : (
         <>
-          <IPInput />
+          {/* <IPInput /> */}
+          <Text type="danger"  >Last Uptaded 100 Malicious Links According To The USOM API</Text>
+
+
           <Table
             loading={isLoading}
             columns={columns}
             dataSource={dataUsom}
             onChange={handleChange}
-            style={{ marginTop: "1rem" }}
           />
         </>
       )}

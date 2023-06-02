@@ -8,7 +8,6 @@ const Weather = () => {
 
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
-  const [reload, setReload] = useState();
   useEffect(() => {
     setLoading(true);
     fetch(
@@ -18,29 +17,33 @@ const Weather = () => {
       .then((data) => {
         setData(data);
         setTimeout(() => {
-                setLoading(false);
+          setLoading(false);
         }, 1000);
-  
 
         console.log(data);
       });
-  }, [reload]);
+  }, []);
 
   return (
-<>
-
-{!data ? (
-        <Spin tip="Loading" size="large" style={{maxHeight:"150px",minHeight:"150px"}} >
-        </Spin>
+    <>
+      {!data ? (
+        <Spin
+          tip="Loading"
+          size="large"
+          style={{ maxHeight: "150px", minHeight: "150px" }}
+        ></Spin>
       ) : (
         <>
           {isLoading ? (
-            <Spin tip="Loading" size="large" style={{maxHeight:"150px",minHeight:"150px"}} >
-            </Spin>
+            <Spin
+              tip="Loading"
+              size="large"
+              style={{ maxHeight: "150px", minHeight: "150px" }}
+            ></Spin>
           ) : (
             <>
               {" "}
-              <div class="card"  >
+              <div class="card">
                 <div class="card__info">
                   <p class="card__info__place">{data.name}</p>
                   <DateTime />
@@ -69,9 +72,7 @@ const Weather = () => {
           )}
         </>
       )}
-</>
-      
-  
+    </>
   );
 
   //   useEffect(() => {
